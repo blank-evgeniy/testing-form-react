@@ -24,14 +24,14 @@ const Results = ({results, score}) => {
     });
 
     return <>
-        <p>Результаты: {score}</p>
+        <p>Результат: {` ${score}/${listResults.length} `}</p>
         {listResults}
     </>
 }
 
 Results.propTypes = {
     results: PropTypes.array.isRequired,
-    score: PropTypes.number.isRequired
+    score: PropTypes.string.isRequired
 }
 
 export default Results;

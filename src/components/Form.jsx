@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from "react";
-import questions from "./questions.json";
+import questions from "../data/questions.json";
 
 const Form = ({onUpdateStatus, onAnswer}) => {
     const [currentQuestionNum, setCurrentQuestionNum] = useState(0);
