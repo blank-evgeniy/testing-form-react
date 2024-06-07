@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import Form from "./components/Form"
 import Results from "./components/Results"
 import Intro from "./components/Intro"
+import Footer from "./components/Footer"
 import { useState } from "react";
 
 function App() {
@@ -19,13 +20,14 @@ function App() {
   }
 
   return (
-    <div className="bg-white dark:bg-dark-main min-h-[100vh] transition-colors duration-300 ease-in">
-      <div className="max-w-[1200px] my-0 mx-auto">
-        <Header />
+    <div className="bg-white dark:bg-dark-main transition-colors duration-300 ease-in">
+      <Header/>
+      <main className="max-w-[1200px] my-0 mx-auto">
         {status === "intro" && <Intro onUpdateStatus={updateStatus}/>}
         {status === "testing" && <Form onUpdateStatus={updateStatus} onAnswer={updateResults}/>}
         {status === "success" && <Results score={score} results={results}/>}
-      </div>
+      </main>
+      <Footer />
     </div>
   )
 }

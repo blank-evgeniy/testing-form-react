@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     return  (
-        <header className="sm:px-20 px-4 pt-8 pb-14 flex justify-between">
+        <header className="sm:px-20 px-4 pt-8 pb-14 flex justify-between max-w-[1200px] my-0 mx-auto">
             <div className="sm:text-5xl text-3xl text-center dark:text-white"><span className="text-green-accent">#React</span> <br/> Тест</div>
             <button onClick={handleThemeChange} className="text-white dark:text-black transition-colors duration-300 ease-in-out bg-gray-500 dark:bg-white w-28 h-10 rounded-full"> <div className="transition-transform dark:translate-x-16 w-10">{theme==='dark'? <GoSun className="size-[32px] mx-1"/> : <GoMoon className="size-[32px] mx-1"/>}</div> </button>
         </header>
