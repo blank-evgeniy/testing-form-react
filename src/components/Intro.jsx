@@ -6,7 +6,7 @@ const Intro = ({onUpdateStatus}) => {
         <h1 
             className='text-6xl max-w-[720px]'>
             Проверь свои знания <br/> по библиотеке 
-            <span className='text-green-accent'>react</span>
+            <span className='text-green-accent'> react</span>
         </h1>
         <div 
         className='relative w-[600px] h-[220px] rounded-[40px] ml-20 mt-14 
