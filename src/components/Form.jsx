@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from "react";
 import questions from "../data/questions.json";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Form = ({onUpdateStatus, onAnswer}) => {
     const [currentQuestionNum, setCurrentQuestionNum] = useState(0);
@@ -12,9 +13,10 @@ const Form = ({onUpdateStatus, onAnswer}) => {
 
     currentQuestion.answers.forEach((answer, index) => {
         listAnswers.push(
-            <label key={currentQuestion.id+':'+index}>
-                <input type="radio" name="test" value={"answer"+index} onChange={(e) => handleAnswerChange(e, index)}/>
+            <label className='radio flex gap-4 items-center' key={currentQuestion.id+':'+index}>
+                <input className='' type="radio" name="test" value={"answer"+index} onChange={(e) => handleAnswerChange(e, index)}/>
                 {answer}
+                <span></span>
             </label>
         )
     })
@@ -43,22 +45,28 @@ const Form = ({onUpdateStatus, onAnswer}) => {
         setAnswer(answer);
     }
 
-    return <div className="flex flex-col items-center text-white">
+    return <div 
+    className="flex flex-col items-center bg-white
+            mx-[120px] rounded-[32px] rounded-ee-3xl border-green-main border-l-[20px] border-b-[14px] text-black">
 
-        <form className="flex flex-col items-center gap-4 max-w-screen-xl p-2">
-            <h2 className="text-xl text-green-400">{currentQuestion.question}</h2>
+        <form className="w-full">
+            <div className="flex py-14 justify-between gap-24 px-20">
+                <h2 className="text-3xl">{currentQuestion.question}</h2>
+                <div className="text-5xl">{currentQuestionNum + '/' + questions.length}</div>
+            </div>
             
-            <div className="flex flex-col gap-4 text-white">
+            <div className="grid grid-cols-2 gap-x-[150px] px-20 gap-y-[60px] text-xl pb-10">
                 {listAnswers}
             </div>
 
             <button 
                 disabled = {answer===null}
                 onClick={handleNextButton}
-                className="bg-slate-100 w-48 rounded-md border-green-400 border-2 text-black
-                hover:bg-green-700 hover:text-gray-50
+                className="text-3xl
+                bg-white w-full h-40 rounded-b-[12px]
+                hover:bg-[#EFEFEF] hover:text-gray-500
                 transition-colors duration-500 ease-in-out"
-                >Следующий вопрос
+                >Следующий вопрос <IoIosArrowForward className='inline size-10'/>
             </button> 
         </form>
     

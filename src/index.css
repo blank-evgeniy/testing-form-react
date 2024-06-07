@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url("css/radio.css");
 
 @tailwind base;
 @tailwind components;

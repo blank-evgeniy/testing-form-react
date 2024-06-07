@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { IoIosArrowForward } from "react-icons/io";
 
 const Intro = ({onUpdateStatus}) => {
-    return <div className='pl-40  pt-14'>
+    return <div className='pl-40 '>
         <h1 
             className='text-6xl max-w-[720px]'>
             Проверь свои знания <br/> по библиотеке 
