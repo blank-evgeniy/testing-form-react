@@ -4,10 +4,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body {
-  background-color: #232323;
-  color: white;
-  max-width: 1200px;
-  margin: 0 auto;
-}

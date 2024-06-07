@@ -46,27 +46,27 @@ const Form = ({onUpdateStatus, onAnswer}) => {
     }
 
     return <div 
-    className="flex flex-col items-center bg-white
-            mx-[120px] rounded-[32px] rounded-ee-3xl border-green-main border-l-[20px] border-b-[14px] text-black">
+    className="flex flex-col items-center dark:bg-white bg-dark-main transition-colors duration-500 ease-in-out
+            sm:mx-[120px] mx-4 rounded-[32px] rounded-ee-3xl border-green-main border-l-[20px] border-b-[14px] dark:text-black text-white">
 
         <form className="w-full">
-            <div className="flex py-14 justify-between gap-24 px-20">
-                <h2 className="text-3xl">{currentQuestion.question}</h2>
-                <div className="text-5xl">{currentQuestionNum + '/' + questions.length}</div>
+            <div className="flex md:flex-row flex-col-reverse sm:py-14 py-8 justify-between md:gap-24 gap-4 md:px-20 px-4">
+                <h2 className="md:text-3xl text-xl">{currentQuestion.question}</h2>
+                <div className="md:text-5xl text-3xl">{currentQuestionNum+1 + '/' + questions.length}</div>
             </div>
             
-            <div className="grid grid-cols-2 gap-x-[150px] px-20 gap-y-[60px] text-xl pb-10">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-x-[150px] md:px-20 px-4 gap-y-[60px] text-xl pb-10">
                 {listAnswers}
             </div>
 
             <button 
                 disabled = {answer===null}
                 onClick={handleNextButton}
-                className="text-3xl
-                bg-white w-full h-40 rounded-b-[12px]
-                hover:bg-[#EFEFEF] hover:text-gray-500
+                className="sm:text-3xl text-xl
+                dark:bg-white bg-dark-main w-full h-40 rounded-b-[12px]
+                hover:dark:bg-[#EFEFEF] hover:bg-[#1C1C1C]
                 transition-colors duration-500 ease-in-out"
-                >Следующий вопрос <IoIosArrowForward className='inline size-10'/>
+                > {currentQuestionNum!==9 ? "Следующий вопрос": "Подвести итоги"}  <IoIosArrowForward className='inline size-10'/>
             </button> 
         </form>
     

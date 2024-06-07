@@ -6,16 +6,16 @@ const Results = ({results, score}) => {
     results.forEach( (result, index) => {
         if (result.rightAnswer !== result.answer ) {
             listResults.push(
-            <div className="text-xl pb-10" key={index}>
-                    <div className="flex items-end bg-red-main pl-4 rounded-ee-[20px]"><span className='text-4xl  min-w-12'>{index+1}</span><span>{result.question}</span></div>
-                    <p className="text-[#cacaca] pl-20 pt-2">{`Ваш ответ: ${result.answer}`}</p>
-                    <p className="text-white pl-20">{`Правильный ответ: ${result.rightAnswer}`}</p>
+            <div className="sm:text-xl text-lg pb-10" key={index}>
+                    <div className="flex items-start bg-red-main pl-4 px-2 rounded-ee-[20px]"><span className='sm:text-4xl text-2xl min-w-12'>{index+1}</span><span>{result.question}</span></div>
+                    <p className="text-[#cacaca] sm:pl-20 px-2 pt-2">{`Ваш ответ: ${result.answer}`}</p>
+                    <p className="dark:text-white text-black sm:pl-20 px-2">{`Правильный ответ: ${result.rightAnswer}`}</p>
             </div>
         )} else {
             listResults.push(
-                <div className="text-xl pb-10" key={index}>
-                    <div className="flex items-end bg-green-main pl-4 rounded-ee-[20px]"><span className='text-4xl min-w-12'>{index+1}</span><span>{result.question}</span></div>
-                    <p className="text-white pl-20 pt-2">{`Ответ: ${result.answer}`}</p>
+                <div className="sm:text-xl text-lg pb-10" key={index}>
+                    <div className="flex items-start bg-green-main pl-4 px-2 rounded-ee-[20px]"><span className='sm:text-4xl text-2xl min-w-12'>{index+1}</span><span>{result.question}</span></div>
+                    <p className="dark:text-white text-black sm:pl-20 px-2 pt-2">{`Ответ: ${result.answer}`}</p>
                 </div>
             )
         }
@@ -23,10 +23,10 @@ const Results = ({results, score}) => {
     });
 
     return <>
-        <p className='flex justify-between text-5xl px-[100px] py-10 text-black bg-white rounded-ss-[40px] border-b-[16px] border-[#EFEFEF]'>
+        <p className='flex justify-between sm:text-5xl text-3xl sm:px-[100px] px-4 py-10 dark:text-black text-white dark:bg-white bg-dark-main rounded-ss-[40px] border-b-[16px] dark:border-[#EFEFEF] border-black '>
             <span>Результат</span> {` ${score}/${listResults.length} `}
         </p>
-        <div className='pl-[150px] text-black'>
+        <div className='sm:pl-[150px] text-black'>
             {listResults}
         </div>
     </>

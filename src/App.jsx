@@ -19,12 +19,14 @@ function App() {
   }
 
   return (
-    <>
-      <Header />
-      {status === "intro" && <Intro onUpdateStatus={updateStatus}/>}
-      {status === "testing" && <Form onUpdateStatus={updateStatus} onAnswer={updateResults}/>}
-      {status === "success" && <Results score={score} results={results}/>}
-    </>
+    <div className="bg-white dark:bg-dark-main min-h-[100vh] transition-colors duration-300 ease-in">
+      <div className="max-w-[1200px] my-0 mx-auto">
+        <Header />
+        {status === "intro" && <Intro onUpdateStatus={updateStatus}/>}
+        {status === "testing" && <Form onUpdateStatus={updateStatus} onAnswer={updateResults}/>}
+        {status === "success" && <Results score={score} results={results}/>}
+      </div>
+    </div>
   )
 }
 
