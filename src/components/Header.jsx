@@ -1,8 +1,8 @@
 
 const Header = () => {
     return  (
-        <header className="flex justify-center h-24 py-3">
-            <h1 className="text-3xl font-bold text-green-400">Тест на знание основ React JS</h1>
+        <header className="pl-20 pt-8">
+            <div className="text-5xl w-52 text-center"><span className="text-green-accent">#React</span> <br/> Тест</div>
         </header>
     )
 }

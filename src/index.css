@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background-color: rgb(47, 47, 53);
+  background-color: #232323;
   color: white;
+  max-width: 1200px;
+  margin: 0 auto;
 }

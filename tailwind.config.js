@@ -5,7 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Yeseva One', 'sans-serif'],
+      serif: ["Yeseva One", 'serif'],
+    },
+    extend: {
+      colors: {
+        'green-main': '#ACFAAB',
+        'green-accent': '#5DD25A',
+        'green-dull': "#6C8D6B",
+        'red-main': '#FFBABA',
+        'dark-main': '#232323',
+      },
+    },
   },
   plugins: [],
 }
