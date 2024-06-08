@@ -2,7 +2,9 @@ import { GoSun } from "react-icons/go";
 import { GoMoon } from "react-icons/go";
 import { useState } from "react";
 
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+if (localStorage.theme === 'dark' 
+    || (!('theme' in localStorage) 
+    && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
   } else {
     document.documentElement.classList.remove('dark')
@@ -23,9 +25,25 @@ const Header = () => {
     }
 
     return  (
-        <header className="sm:px-20 px-4 pt-8 pb-14 flex justify-between max-w-[1200px] my-0 mx-auto">
-            <div className="sm:text-5xl text-3xl text-center dark:text-white"><span className="text-green-accent">#React</span> <br/> Тест</div>
-            <button onClick={handleThemeChange} className="text-white dark:text-black transition-colors duration-300 ease-in-out bg-gray-500 dark:bg-white w-28 h-10 rounded-full"> <div className="transition-transform dark:translate-x-16 w-10">{theme==='dark'? <GoSun className="size-[32px] mx-1"/> : <GoMoon className="size-[32px] mx-1"/>}</div> </button>
+        <header 
+        className="flex justify-between 
+        max-w-[1200px] sm:px-20 px-4 pt-8 pb-14 my-0 mx-auto"
+        >
+            <div 
+            className="sm:text-5xl text-3xl text-center dark:text-white"
+            >
+                <span className="text-green-accent">#React</span> <br/> Тест</div>
+            <button 
+            onClick={handleThemeChange} 
+            className="w-28 h-10 rounded-full
+            transition-colors duration-300 ease-in-out 
+            text-white dark:text-black 
+            bg-gray-500 dark:bg-white"
+            > 
+                <div className="w-10 transition-transform dark:translate-x-16">
+                {theme==='dark'? <GoSun className="size-[32px] mx-1"/> : <GoMoon className="size-[32px] mx-1"/>}
+                </div> 
+            </button>
         </header>
     )
 }
