@@ -9,10 +9,9 @@ const Intro = ({onUpdateStatus}) => {
             <span className='text-green-accent'> react</span>
         </h1>
         <div 
-        className='relative md:w-[600px] h-[220px] rounded-[40px] md:ml-20 mt-14 
-        bg-[url("/src/img/intro.jpg")] bg-cover'>
+        className='relative md:w-[600px] h-[220px] rounded-[40px] md:ml-20 mt-14 bg-cover bg-[url("/intro.jpg")]'>
             <div 
-            className='absolute bottom-[-28px] bg-[white] rounded-[40px]
+            className='absolute bottom-[-28px] bg-[white] rounded-[40px] bg-[]
             md:max-w-[600px] md:h-[220px] z-[-1]'/>
             <button
             className='relative left-1/4 top-3/4 md:left-[500px] md:top-[130px] pl-6 pr-2 sm:py-10 py-4 
