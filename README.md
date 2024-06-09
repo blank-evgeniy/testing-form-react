@@ -1,4 +1,4 @@
-My pet project with the stack: 
+My pet project with the stack:   
 Tailwind CSS  
 React  
 React Router v6  
