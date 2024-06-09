@@ -3,7 +3,7 @@ import { useState } from "react";
 import questions from "../data/questions.json";
 import { IoIosArrowForward } from "react-icons/io";
 
-const Form = ({onUpdateStatus, onAnswer}) => {
+const Form = ({onAnswer}) => {
     const [currentQuestionNum, setCurrentQuestionNum] = useState(0);
     const [answer, setAnswer] = useState(null);
 
@@ -39,15 +39,14 @@ const Form = ({onUpdateStatus, onAnswer}) => {
             rightAnswer: currentQuestion.answers[currentQuestion.correct-1]
         }
 
-        onAnswer(result, answer===currentQuestion.correct-1);
+        onAnswer(result, 
+            answer===currentQuestion.correct-1,
+            currentQuestionNum===questions.length-1);
 
         if (currentQuestionNum<questions.length-1){
             setCurrentQuestionNum(currentQuestionNum+1);
             setAnswer(null);
-        } else {
-            onUpdateStatus("success");
-        }
-        
+        } 
     }
 
     function handleAnswerChange(e, answer) {
@@ -96,7 +95,6 @@ const Form = ({onUpdateStatus, onAnswer}) => {
 }
 
 Form.propTypes = {
-    onUpdateStatus: PropTypes.func.isRequired,
     onAnswer: PropTypes.func.isRequired,
 }
 
